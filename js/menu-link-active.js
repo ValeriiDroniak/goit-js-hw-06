@@ -1,8 +1,8 @@
-const currentPageUrl = '.' + location.pathname;
-const linkActive = document.querySelector(
-    location.href === location.origin + '/'
-        ? '.menu__link[href = "./index.html"]'
-        : `.menu__link[href = "${currentPageUrl}"]`
-)
-
-linkActive.classList.add('current');
+const linkActive = (document.querySelectorAll('.menu__link').forEach(el => {
+    if (!(/.html$/).test(location.href)) {
+        document.querySelector('.menu__link[href = "./index.html"]').classList.add('current');
+    }
+    if (el.href === location.href) {
+        el.classList.add('current');
+    }
+}))
