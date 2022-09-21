@@ -11,7 +11,7 @@ function onInputChange(event) {
 }
 
 function onInputblure(event) {
-    if (event.currentTarget.value === '') {
+    if (!event.currentTarget.value) {
         ref.outputEl.textContent = 'Anonymous';
     }
 }
